@@ -20,6 +20,7 @@ struct AppInfo: Decodable {
     let description: String
     let genres: [String]
     let sellerName: String
+    let version: String
     
     enum CodingKeys: String, CodingKey {
         case icon = "artworkUrl60"
@@ -30,5 +31,6 @@ struct AppInfo: Decodable {
         case description
         case genres
         case sellerName
+        case version
     }
 }

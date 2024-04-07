@@ -31,6 +31,8 @@
 		42D680472BC270DB0087B90C /* SearchedItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D680462BC270DB0087B90C /* SearchedItemTableViewCell.swift */; };
 		42D6804A2BC27A060087B90C /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D680492BC27A060087B90C /* SearchManager.swift */; };
 		42D6804D2BC27BFC0087B90C /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D6804C2BC27BFC0087B90C /* AppInfo.swift */; };
+		42D680502BC2B5570087B90C /* DetailAppInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D6804F2BC2B5570087B90C /* DetailAppInfoViewController.swift */; };
+		42D680522BC2B58C0087B90C /* DetailAppInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D680512BC2B58C0087B90C /* DetailAppInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		42D680462BC270DB0087B90C /* SearchedItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchedItemTableViewCell.swift; sourceTree = "<group>"; };
 		42D680492BC27A060087B90C /* SearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchManager.swift; sourceTree = "<group>"; };
 		42D6804C2BC27BFC0087B90C /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		42D6804F2BC2B5570087B90C /* DetailAppInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAppInfoViewController.swift; sourceTree = "<group>"; };
+		42D680512BC2B58C0087B90C /* DetailAppInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAppInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 				42D680482BC278A10087B90C /* Network */,
 				42D6802C2BC26A690087B90C /* BaseView */,
 				42D680212BC26A2D0087B90C /* View */,
+				42D6804E2BC2B53D0087B90C /* DetailAppInfoView */,
 				42D680432BC26FCA0087B90C /* SearchView */,
 				42D680202BC26A230087B90C /* TabBar */,
 				42D6800A2BC268550087B90C /* AppDelegate.swift */,
@@ -161,6 +166,15 @@
 				42D6804C2BC27BFC0087B90C /* AppInfo.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		42D6804E2BC2B53D0087B90C /* DetailAppInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				42D6804F2BC2B5570087B90C /* DetailAppInfoViewController.swift */,
+				42D680512BC2B58C0087B90C /* DetailAppInfoView.swift */,
+			);
+			path = DetailAppInfoView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +268,7 @@
 				42D680322BC26F6E0087B90C /* SearchView.swift in Sources */,
 				42D6804D2BC27BFC0087B90C /* AppInfo.swift in Sources */,
 				42D680452BC26FE90087B90C /* SearchViewModel.swift in Sources */,
+				42D680502BC2B5570087B90C /* DetailAppInfoViewController.swift in Sources */,
 				42D6801F2BC269490087B90C /* MainTabBarController.swift in Sources */,
 				42D6802E2BC26A760087B90C /* BaseViewController.swift in Sources */,
 				42D680292BC26A550087B90C /* ArcadeViewController.swift in Sources */,
@@ -261,6 +276,7 @@
 				42D680252BC26A470087B90C /* GameViewController.swift in Sources */,
 				42D680302BC26AC50087B90C /* BaseView.swift in Sources */,
 				42D6804A2BC27A060087B90C /* SearchManager.swift in Sources */,
+				42D680522BC2B58C0087B90C /* DetailAppInfoView.swift in Sources */,
 				42D6800D2BC268550087B90C /* SceneDelegate.swift in Sources */,
 				42D680472BC270DB0087B90C /* SearchedItemTableViewCell.swift in Sources */,
 			);

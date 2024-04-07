@@ -30,17 +30,20 @@ final class SearchViewController: BaseViewController {
         bind()
     }
     
-    override func configureView() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         navigationItem.title = "검색"
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    override func configureView() {
         navigationItem.searchController = searchController
     }
     
     private func bind() {
         let searchQuery = PublishRelay<String>()
-        let searchButtonTap = PublishRelay<Void>()
         
-        let input = SearchViewModel.Input(searchQuery: searchQuery)
+        let input = SearchViewModel.Input(searchQuery: searchQuery, searchTap: searchController.searchBar.rx.searchButtonClicked)
         
         let output = viewModel.transform(input: input)
         
@@ -53,6 +56,14 @@ final class SearchViewController: BaseViewController {
         output.appList
             .bind(to: mainView.tableView.rx.items(cellIdentifier: SearchedItemTableViewCell.identifier, cellType: SearchedItemTableViewCell.self)) { (row, element, cell) in
                 cell.configureCell(item: element)
+            }
+            .disposed(by: disposeBag)
+        
+        mainView.tableView.rx.modelSelected(AppInfo.self)
+            .bind(with: self) { owner, value in
+                let detailView = DetailAppInfoViewController()
+                detailView.data = value
+                owner.navigationController?.pushViewController(detailView, animated: true)
             }
             .disposed(by: disposeBag)
         

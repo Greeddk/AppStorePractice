@@ -15,6 +15,7 @@ final class SearchViewModel {
     
     struct Input {
         let searchQuery: PublishRelay<String>
+        let searchTap: ControlEvent<Void>
     }
     
     struct Output {
@@ -23,18 +24,17 @@ final class SearchViewModel {
     
      func transform(input: Input) -> Output {
         let appList = PublishRelay<[AppInfo]>()
-        
-        input.searchQuery
-             .debounce(.milliseconds(500), scheduler: MainScheduler.instance)
-            .flatMap {
-                SearchManager.fetchApps(query: $0)
-            }
-            .subscribe(with: self) { owner, value in
-                let data = value.results
-                print(data)
-                appList.accept(data)
-            }
-            .disposed(by: disposeBag)
+         
+         input.searchTap
+             .withLatestFrom(input.searchQuery)
+             .flatMap {
+                 SearchManager.fetchApps(query: $0)
+             }
+             .bind(with: self) { owner, value in
+                 let data = value.results
+                 appList.accept(data)
+             }
+             .disposed(by: disposeBag)
         
         return Output(appList: appList)
     }
