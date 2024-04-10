@@ -10,7 +10,7 @@
 
 ## 목적
 - iTunes API를 활용하여 세로 스크롤뷰 안에 가로 스크롤뷰 구현 연습
-- RxSwift와 네트워크 통신 연습
+- RxSwift-MVVM 패턴과 네트워크 통신 연습
 
 ## 사용 기술
 - URLSession
